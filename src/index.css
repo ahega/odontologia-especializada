@@ -2,94 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
+    /* Config-driven variables injected via JS */
+    --primario: #C9A87C;
+    --primario-deep: #A8864A;
+    --primario-medio: #D4B88A;
+    --primario-light: #E8D5B8;
+    --primario-pale: #FAF5ED;
+    --primario-subtle: #FDFAF6;
+    --oscuro: #1A1200;
+    --hero-fondo: #1A1200;
+    --texto-primario: #1A1200;
+    --texto-secundario: #4A3A1A;
+    --texto-muted: #8A7A5A;
+    --fondo: #FFFFFF;
+    --fondo-alt: #FAF5ED;
+    --font-titulos: 'Cormorant Garamond', serif;
+    --font-subtitulos: 'DM Sans', sans-serif;
+    --font-cuerpo: 'Inter', sans-serif;
+
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 30 100% 5%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 30 100% 5%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    --popover-foreground: 30 100% 5%;
+    --primary: 35 35% 63%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 35 50% 95%;
+    --secondary-foreground: 30 100% 5%;
+    --muted: 35 50% 95%;
+    --muted-foreground: 35 20% 45%;
+    --accent: 35 50% 95%;
+    --accent-foreground: 30 100% 5%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --destructive-foreground: 0 0% 100%;
+    --border: 35 30% 88%;
+    --input: 35 30% 88%;
+    --ring: 35 35% 63%;
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -98,8 +58,114 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-cuerpo);
   }
+  h1, h2, h3 {
+    font-family: var(--font-titulos);
+  }
+}
+
+@layer utilities {
+  .font-titulos {
+    font-family: var(--font-titulos);
+  }
+  .font-subtitulos {
+    font-family: var(--font-subtitulos);
+  }
+  .font-cuerpo {
+    font-family: var(--font-cuerpo);
+  }
+  .bg-primario {
+    background-color: var(--primario);
+  }
+  .bg-primario-deep {
+    background-color: var(--primario-deep);
+  }
+  .bg-primario-pale {
+    background-color: var(--primario-pale);
+  }
+  .bg-primario-subtle {
+    background-color: var(--primario-subtle);
+  }
+  .bg-primario-light {
+    background-color: var(--primario-light);
+  }
+  .bg-oscuro {
+    background-color: var(--oscuro);
+  }
+  .bg-fondo {
+    background-color: var(--fondo);
+  }
+  .bg-fondo-alt {
+    background-color: var(--fondo-alt);
+  }
+  .bg-hero-fondo {
+    background-color: var(--hero-fondo);
+  }
+  .text-primario {
+    color: var(--primario);
+  }
+  .text-primario-deep {
+    color: var(--primario-deep);
+  }
+  .text-oscuro {
+    color: var(--oscuro);
+  }
+  .text-texto-primario {
+    color: var(--texto-primario);
+  }
+  .text-texto-secundario {
+    color: var(--texto-secundario);
+  }
+  .text-texto-muted {
+    color: var(--texto-muted);
+  }
+  .border-primario {
+    border-color: var(--primario);
+  }
+  .border-primario-pale {
+    border-color: var(--primario-pale);
+  }
+  .shadow-primario {
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--primario) 8%, transparent);
+  }
+  .shadow-primario-hover {
+    box-shadow: 0 12px 40px color-mix(in srgb, var(--primario) 15%, transparent);
+  }
+  .ring-primario {
+    --tw-ring-color: var(--primario);
+  }
+
+  .animate-scroll-in {
+    animation: scrollIn 0.6s ease-out both;
+  }
+}
+
+@keyframes scrollIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--primario) 40%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 12px color-mix(in srgb, var(--primario) 0%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--primario) 0%, transparent);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
