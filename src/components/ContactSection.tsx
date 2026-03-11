@@ -25,7 +25,7 @@ Mensaje: ${formData.mensaje}`;
   const inputClass = "w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 font-cuerpo text-sm focus:outline-none focus:border-primario transition-colors";
 
   return (
-    <section id="contacto" className="py-20 bg-oscuro">
+    <section id="contacto" className="py-20" style={{ background: '#2C1F0A' }}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-14">
           <h2 className="font-titulos text-3xl md:text-4xl font-bold mb-3" style={{ color: 'white' }}>

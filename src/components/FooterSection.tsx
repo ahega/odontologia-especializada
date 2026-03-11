@@ -1,7 +1,7 @@
 import CONFIG from '../config';
 
 const FooterSection = () => (
-  <footer className="bg-oscuro py-16 border-t border-white/5">
+  <footer className="py-16 border-t border-white/5" style={{ background: '#2C1F0A' }}>
     <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-12">
       {/* Col 1 */}
       <div>

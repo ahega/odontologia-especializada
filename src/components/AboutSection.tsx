@@ -27,11 +27,11 @@ const AboutSection = () => {
                 <div className="w-16 h-16 rounded-full bg-fondo flex items-center justify-center shadow-primario mb-2">
                   <span className="font-titulos text-lg font-bold text-primario">{getInitials(e.nombre)}</span>
                 </div>
-                <span className="font-subtitulos text-[10px] text-texto-muted text-center">{e.especialidad}</span>
+                <span className="font-subtitulos text-[10px] text-center" style={{ color: 'var(--texto-muted)' }}>{e.especialidad}</span>
               </div>
             ))}
           </div>
-          <p className="absolute bottom-4 font-subtitulos text-xs text-texto-muted">
+          <p className="absolute bottom-4 font-subtitulos text-xs" style={{ color: 'var(--texto-muted)' }}>
             {CONFIG.especialistas.length} Especialistas Independientes
           </p>
         </div>
@@ -41,16 +41,16 @@ const AboutSection = () => {
           <span className="text-primario font-subtitulos text-xs font-bold tracking-widest uppercase mb-3 block">
             ✦ Sobre Nosotros
           </span>
-          <h2 className="font-titulos text-3xl md:text-4xl font-bold text-oscuro mb-4">
+          <h2 className="font-titulos text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1C1208' }}>
             Especialistas Independientes Comprometidos con Tu Salud
           </h2>
           <div className="w-16 h-[3px] bg-primario mb-6" />
-          <p className="font-cuerpo text-sm text-texto-muted leading-relaxed mb-8">{CONFIG.descripcionSobre}</p>
+          <p className="font-cuerpo text-sm leading-relaxed mb-8" style={{ color: 'var(--texto-muted)' }}>{CONFIG.descripcionSobre}</p>
           <div className="grid grid-cols-2 gap-4">
             {values.map(v => (
               <div key={v.text} className="bg-primario-pale rounded-xl p-4">
                 <span className="text-primario font-bold mr-2">{v.icon}</span>
-                <span className="font-subtitulos text-sm text-oscuro">{v.text}</span>
+                <span className="font-subtitulos text-sm" style={{ color: '#1C1208' }}>{v.text}</span>
               </div>
             ))}
           </div>
