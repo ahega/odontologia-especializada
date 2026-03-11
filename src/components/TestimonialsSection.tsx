@@ -18,7 +18,7 @@ const TestimonialsSection = () => {
           <span className="text-primario font-subtitulos text-xs font-bold tracking-widest uppercase mb-3 block">
             ✦ Testimonios
           </span>
-          <h2 className="font-titulos text-3xl md:text-4xl font-bold text-oscuro">
+          <h2 className="font-titulos text-3xl md:text-4xl font-bold" style={{ color: '#1C1208' }}>
             Lo Que Dicen Nuestros Pacientes
           </h2>
         </div>
@@ -34,11 +34,11 @@ const TestimonialsSection = () => {
                   <div className="text-primario text-xl mb-4">
                     {'★'.repeat(t.estrellas)}
                   </div>
-                  <p className="font-cuerpo text-sm text-texto-secundario leading-relaxed mb-6 italic">
+                  <p className="font-cuerpo text-sm leading-relaxed mb-6 italic" style={{ color: 'var(--texto-secundario)' }}>
                     "{t.texto}"
                   </p>
-                  <p className="font-subtitulos text-sm font-bold text-oscuro">{t.nombre}</p>
-                  <p className="font-cuerpo text-xs text-texto-muted">{t.servicio} · {t.ciudad}</p>
+                  <p className="font-subtitulos text-sm font-bold" style={{ color: '#1C1208' }}>{t.nombre}</p>
+                  <p className="font-cuerpo text-xs" style={{ color: 'var(--texto-muted)' }}>{t.servicio} · {t.ciudad}</p>
                 </div>
               </div>
             ))}

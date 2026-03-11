@@ -11,7 +11,7 @@ const FAQSection = () => {
           <span className="text-primario font-subtitulos text-xs font-bold tracking-widest uppercase mb-3 block">
             ✦ Preguntas Frecuentes
           </span>
-          <h2 className="font-titulos text-3xl md:text-4xl font-bold text-oscuro">
+          <h2 className="font-titulos text-3xl md:text-4xl font-bold" style={{ color: '#1C1208' }}>
             Resolvemos Tus Dudas
           </h2>
         </div>
@@ -23,7 +23,7 @@ const FAQSection = () => {
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full flex items-center justify-between p-5 text-left"
               >
-                <span className="font-subtitulos text-sm font-bold text-oscuro pr-4">{faq.pregunta}</span>
+                <span className="font-subtitulos text-sm font-bold pr-4" style={{ color: '#1C1208' }}>{faq.pregunta}</span>
                 <span className={`text-primario text-xl transition-transform duration-300 flex-shrink-0 ${openIndex === i ? 'rotate-45' : ''}`}>
                   +
                 </span>
@@ -32,7 +32,7 @@ const FAQSection = () => {
                 className="overflow-hidden transition-all duration-300"
                 style={{ maxHeight: openIndex === i ? '200px' : '0px' }}
               >
-                <p className="px-5 pb-5 font-cuerpo text-sm text-texto-muted leading-relaxed">
+                <p className="px-5 pb-5 font-cuerpo text-sm leading-relaxed" style={{ color: 'var(--texto-muted)' }}>
                   {faq.respuesta}
                 </p>
               </div>

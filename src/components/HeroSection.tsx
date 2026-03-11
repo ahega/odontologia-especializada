@@ -1,8 +1,15 @@
 import CONFIG from '../config';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import equipoFoto from '../assets/especialistas/equipo.png';
 
 const HeroSection = () => {
   const ref = useScrollAnimation();
+
+  // Extract RGB from primario hex for rgba usage
+  const hex = CONFIG.colores.primario;
+  const pr = parseInt(hex.slice(1, 3), 16);
+  const pg = parseInt(hex.slice(3, 5), 16);
+  const pb = parseInt(hex.slice(5, 7), 16);
 
   return (
     <section id="inicio" className="bg-hero-fondo min-h-screen flex items-center relative overflow-hidden">
@@ -61,22 +68,49 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* Right - placeholder */}
-        <div className="hidden lg:flex flex-col items-center">
-          <div className="w-full max-w-md h-[500px] rounded-2xl flex flex-col items-center justify-center" style={{ backgroundColor: 'color-mix(in srgb, var(--primario) 15%, transparent)' }}>
-            <svg width="160" height="160" viewBox="0 0 200 200" fill="none" className="mb-4">
-              <circle cx="60" cy="70" r="22" fill="var(--primario)" opacity="0.6" />
-              <circle cx="140" cy="70" r="22" fill="var(--primario)" opacity="0.6" />
-              <circle cx="60" cy="130" r="22" fill="var(--primario)" opacity="0.6" />
-              <circle cx="140" cy="130" r="22" fill="var(--primario)" opacity="0.6" />
-              <rect x="45" y="85" width="30" height="10" rx="5" fill="var(--primario)" opacity="0.3" />
-              <rect x="125" y="85" width="30" height="10" rx="5" fill="var(--primario)" opacity="0.3" />
-              <rect x="45" y="145" width="30" height="10" rx="5" fill="var(--primario)" opacity="0.3" />
-              <rect x="125" y="145" width="30" height="10" rx="5" fill="var(--primario)" opacity="0.3" />
-            </svg>
-            <p className="font-subtitulos text-[11px]" style={{ color: 'rgba(255,255,255,0.6)' }}>
-              Nuestro equipo de especialistas
-            </p>
+        {/* Right - Group Photo */}
+        <div className="hidden lg:flex items-center justify-center">
+          <div className="relative w-full max-w-[480px]">
+            <div className="relative rounded-2xl overflow-hidden"
+              style={{
+                height: '560px',
+                boxShadow: `0 25px 60px rgba(${pr},${pg},${pb},0.25)`,
+                border: `1px solid rgba(${pr},${pg},${pb},0.20)`,
+              }}>
+              <img
+                src={equipoFoto}
+                alt="Equipo Odontología Especializada"
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0"
+                style={{
+                  background: `linear-gradient(to top, rgba(${pr},${pg},${pb},0.45) 0%, transparent 55%)`
+                }} />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <p className="font-subtitulos font-bold text-white"
+                  style={{ fontSize: '14px', letterSpacing: '0.05em' }}>
+                  Nuestro Equipo de Especialistas
+                </p>
+                <p className="font-cuerpo text-white/70 mt-1"
+                  style={{ fontSize: '11px' }}>
+                  {CONFIG.especialistas.length} profesionales independientes · {CONFIG.ciudad}
+                </p>
+              </div>
+            </div>
+            <div className="absolute -bottom-4 -right-4 rounded-xl px-5 py-3"
+              style={{
+                background: 'var(--primario)',
+                boxShadow: `0 8px 24px rgba(${pr},${pg},${pb},0.40)`,
+              }}>
+              <p className="font-titulos font-bold text-white text-center"
+                style={{ fontSize: '22px' }}>
+                {CONFIG.stats[0].numero}
+              </p>
+              <p className="font-cuerpo text-white/80 text-center"
+                style={{ fontSize: '10px' }}>
+                {CONFIG.stats[0].sublabel}
+              </p>
+            </div>
           </div>
         </div>
       </div>
